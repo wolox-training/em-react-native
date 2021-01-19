@@ -1,18 +1,20 @@
 import React from 'react';
 /* eslint-disable no-use-before-define */
 import { Image, StyleSheet, Text, View } from 'react-native';
-import book from '@assets/General/img_book1.png';
 import { COLORS } from '@constants/colors';
+import noBook from '@assets/General/img_book_placeholder.png';
 
-const functionName = () => (
-  <View style={styles.container}>
-    <Image style={styles.image} source={book} />
-    <View style={styles.text}>
-      <Text style={styles.title}>This is the book title</Text>
-      <Text style={styles.author}>who did this</Text>
+const functionName = (props: any) => {
+  return (
+    <View style={styles.container}>
+      <Image defaultSource={noBook} style={styles.image} source={{ uri: props.item.imageUrl }} />
+      <View style={styles.text}>
+        <Text style={styles.title}>{props.item.title}</Text>
+        <Text style={styles.author}>{props.item.author}</Text>
+      </View>
     </View>
-  </View>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -10,29 +9,20 @@
  */
 
 import React from 'react';
-import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
-import { COLORS } from '@constants/colors';
+import { SafeAreaView, StatusBar } from 'react-native';
+import BookList from '@screens/BookList';
 
-import BookList from './screens/BookList';
+import { STYLES } from './styles';
 
-const App = () => {
+function App() {
   return (
-    <View style={styles.view}>
+    <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
+      <SafeAreaView style={STYLES.view}>
         <BookList />
       </SafeAreaView>
-    </View>
+    </>
   );
-};
-
-const styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: COLORS.lightBlue
-  }
-});
+}
 
 export default App;

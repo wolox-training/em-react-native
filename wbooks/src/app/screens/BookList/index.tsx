@@ -1,16 +1,15 @@
 import { BOOKS_MOCK } from '@constants/mockBooks';
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 
 import BookItem from './components/BookItem';
 
 function BookList() {
   return (
-    <View>
-      {BOOKS_MOCK.map(book => (
-        <BookItem item={book} />
-      ))}
-    </View>
+    <SafeAreaView>
+      <FlatList data={BOOKS_MOCK} renderItem={BookItem} keyExtractor={item => item.id.toString()} />
+    </SafeAreaView>
   );
 }
 

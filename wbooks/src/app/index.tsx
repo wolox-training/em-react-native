@@ -12,13 +12,13 @@ import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 import BookList from '@screens/BookList';
 
-import { STYLES } from './styles';
+import styles from './styles';
 
 function App() {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={STYLES.view}>
+      <SafeAreaView style={styles.view}>
         <BookList />
       </SafeAreaView>
     </>

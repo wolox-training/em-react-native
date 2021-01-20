@@ -1,7 +1,7 @@
-import { COLORS } from '@constants/colors';
 import { StyleSheet } from 'react-native';
+import { COLORS } from '@constants/colors';
 
-export const STYLES = StyleSheet.create({
+export default StyleSheet.create({
   container: {
     borderRadius: 5,
     shadowColor: COLORS.black,
@@ -13,12 +13,13 @@ export const STYLES = StyleSheet.create({
     shadowRadius: 1.0,
     elevation: 1,
     flexDirection: 'row',
-    width: 335,
-    height: 90,
     backgroundColor: COLORS.white,
-    marginBottom: 10,
+    marginTop: 10,
     paddingHorizontal: 30,
     paddingVertical: 15
+  },
+  textContainer: {
+    marginLeft: 20
   },
   title: {
     fontWeight: 'bold',
@@ -29,12 +30,8 @@ export const STYLES = StyleSheet.create({
     color: COLORS.gray,
     fontSize: 15
   },
-  text: {
-    marginLeft: 20,
-    flex: 1
-  },
   image: {
-    paddingHorizontal: 20,
-    paddingVertical: 25
+    width: 40,
+    height: 60
   }
 });

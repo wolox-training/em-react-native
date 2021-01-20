@@ -1,35 +1,28 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import noBook from '@assets/img_book_placeholder.png';
+import { Book } from '@interfaces/Book';
 
-import { STYLES } from './styles';
+import styles from './styles';
 
-type Props = {
-  item: {
-    title: string;
-    author: string;
-    imageUrl: string | null;
-  };
-};
-
-function BookItem(props: Props) {
+function BookItem({ item }: Book) {
   return (
-    <View style={STYLES.container}>
+    <View style={styles.container}>
       <Image
-        style={STYLES.image}
+        style={styles.image}
         source={
-          props.item.imageUrl
+          item.imageUrl
             ? {
-                uri: props.item.imageUrl
+                uri: item.imageUrl
               }
             : noBook
         }
       />
-      <View style={STYLES.text}>
-        <Text numberOfLines={2} style={STYLES.title}>
-          {props.item.title}
+      <View style={styles.textContainer}>
+        <Text numberOfLines={2} style={styles.title}>
+          {item.title}
         </Text>
-        <Text style={STYLES.author}>{props.item.author}</Text>
+        <Text style={styles.author}>{item.author}</Text>
       </View>
     </View>
   );

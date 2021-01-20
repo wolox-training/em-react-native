@@ -1,7 +1,6 @@
 export interface Book {
-  item: {
-    title: string;
-    author: string;
-    imageUrl: string | null;
-  };
+  id: number;
+  title: string;
+  author: string;
+  imageUrl: string | null;
 }

@@ -5,7 +5,11 @@ import { Book } from '@interfaces/Book';
 
 import styles from './styles';
 
-function BookItem({ item }: Book) {
+interface Props {
+  item: Book;
+}
+
+function BookItem({ item }: Props) {
   return (
     <View style={styles.container}>
       <Image

@@ -8,20 +8,31 @@
  * @format
  */
 
+import 'react-native-gesture-handler';
 import React from 'react';
-import { SafeAreaView, StatusBar } from 'react-native';
-import BookList from '@screens/BookList';
+import { StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import styles from './styles';
+import SCREENS from './constants';
 
 function App() {
+  const Stack = createStackNavigator();
+
   return (
-    <>
+    <NavigationContainer>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={styles.view}>
-        <BookList />
-      </SafeAreaView>
-    </>
+      <Stack.Navigator>
+        {SCREENS.map(screen => (
+          <Stack.Screen
+            key={screen.id}
+            name={screen.name}
+            component={screen.component}
+            options={screen.options}
+          />
+        ))}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

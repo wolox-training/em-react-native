@@ -16,9 +16,11 @@ export default StyleSheet.create({
     backgroundColor: COLORS.white,
     marginTop: 10,
     paddingHorizontal: 30,
-    paddingVertical: 15
+    paddingVertical: 15,
+    marginHorizontal: 20
   },
   textContainer: {
+    flex: 1,
     marginLeft: 20
   },
   title: {

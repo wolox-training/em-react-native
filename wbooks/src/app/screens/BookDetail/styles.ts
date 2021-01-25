@@ -3,6 +3,7 @@ import { COLORS } from '@constants/colors';
 
 export default StyleSheet.create({
   container: {
+    marginTop: 110,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',

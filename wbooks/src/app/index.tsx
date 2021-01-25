@@ -17,7 +17,7 @@ import AppNavigator from '@components/AppNavigator';
 function App() {
   return (
     <NavigationContainer>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light-content" />
       <AppNavigator />
     </NavigationContainer>
   );

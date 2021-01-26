@@ -3,8 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BookList from '@screens/BookList';
 import BookDetail from '@screens/BookDetail';
+import WishList from '@screens/WishList';
 import { ROUTES, TABS } from '@constants/routes';
-import { View } from 'react-native';
 import { COLORS } from '@constants/colors';
 
 import { SCREEN_OPTS } from './constants';
@@ -22,10 +22,6 @@ function LibraryStackScreen() {
   );
 }
 
-function WishListScreen() {
-  return <View />;
-}
-
 function AppNavigator() {
   return (
     <Tab.Navigator
@@ -34,10 +30,11 @@ function AppNavigator() {
       })}
       tabBarOptions={{
         activeTintColor: COLORS.blue,
-        inactiveTintColor: COLORS.gray
+        inactiveTintColor: COLORS.lightGray,
+        labelStyle: { marginTop: -10 }
       }}>
-      <Tab.Screen name={TABS.bookList} component={LibraryStackScreen} />
-      <Tab.Screen name={TABS.wishList} component={WishListScreen} />
+      <Tab.Screen name={TABS.bookList} component={LibraryStackScreen} options={{ title: 'Library' }} />
+      <Tab.Screen name={TABS.wishList} component={WishList} options={{ title: 'Wishlist' }} />
     </Tab.Navigator>
   );
 }

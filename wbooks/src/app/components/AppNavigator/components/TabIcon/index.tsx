@@ -1,10 +1,10 @@
 import React from 'react';
+import { Image } from 'react-native';
+import { TABS } from '@constants/routes';
 import LibraryInactiveIcon from '@assets/ic_library.png';
 import LibraryActiveIcon from '@assets/ic_library_active.png';
 import wishlistInactiveIcon from '@assets/ic_wishlist.png';
 import wishlistActiveIcon from '@assets/ic_wishlist_active.png';
-import { TABS } from '@constants/routes';
-import { Image } from 'react-native';
 
 interface Props {
   focused: boolean;

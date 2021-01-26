@@ -4,6 +4,6 @@ export const ROUTES = {
 };
 
 export const TABS = {
-  bookList: 'Libros',
-  wishList: 'Lista de deseados'
+  bookList: 'Library',
+  wishList: 'WishList'
 };

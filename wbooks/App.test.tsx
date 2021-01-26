@@ -9,6 +9,7 @@ import renderer from 'react-test-renderer';
 import App from './src/app';
 
 // Note: test renderer must be required after react-native.
+jest.useFakeTimers();
 
 it('renders correctly', () => {
   renderer.create(<App />);

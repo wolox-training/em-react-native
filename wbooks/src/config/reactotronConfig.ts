@@ -21,8 +21,8 @@ if (__DEV__) {
   const scriptHostname = scriptURL.split('://')[1].split(':')[0];
   Reactotron.configure({ name: 'wbooks', host: scriptHostname })
     .use(trackGlobalErrors({}))
-    // .use(apisaucePlugin())
     .use(reactotronRedux())
+    // .use(apisaucePlugin())
     .setAsyncStorageHandler(AsyncStorage)
     .use(overlay())
     .connect();

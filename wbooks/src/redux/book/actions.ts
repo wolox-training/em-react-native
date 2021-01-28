@@ -1,5 +1,5 @@
-import { BOOKS_MOCK } from '@constants/mockBooks';
 import { Dispatch } from 'redux';
+import { BOOKS_MOCK } from '@constants/mockBooks';
 
 export const actions = {
   GET_BOOKS: '@@BOOKS/GET_BOOKS',

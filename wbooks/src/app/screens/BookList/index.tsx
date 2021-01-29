@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react';
 import { SafeAreaView, FlatList, ListRenderItem } from 'react-native';
-import { useDispatch } from 'react-redux';
-import { BOOKS_MOCK } from '@constants/mockBooks';
+import { useDispatch, useSelector } from 'react-redux';
 import { Book } from '@interfaces/Book';
 import actionCreators from '@redux/book/actions';
 
 import BookItem from './components/BookItem';
 import styles from './styles';
 
+interface Props {
+  bookReducer: {
+    books: Book[];
+  };
+}
+
 function BookList() {
   const dispatch = useDispatch();
+  const books = useSelector((state: Props) => state.bookReducer.books);
 
   useEffect(() => {
     dispatch(actionCreators.getBooks());
@@ -20,7 +26,7 @@ function BookList() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList data={BOOKS_MOCK} renderItem={renderItem} keyExtractor={keyExtractor} />
+      <FlatList data={books} renderItem={renderItem} keyExtractor={keyExtractor} />
     </SafeAreaView>
   );
 }

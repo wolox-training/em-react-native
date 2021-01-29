@@ -3,19 +3,14 @@ import { SafeAreaView, FlatList, ListRenderItem } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Book } from '@interfaces/Book';
 import actionCreators from '@redux/book/actions';
+import { AppState } from '@interfaces/Redux';
 
 import BookItem from './components/BookItem';
 import styles from './styles';
 
-interface Props {
-  bookReducer: {
-    books: Book[];
-  };
-}
-
 function BookList() {
   const dispatch = useDispatch();
-  const books = useSelector((state: Props) => state.bookReducer.books);
+  const books = useSelector<AppState, Book[]>(state => state.bookReducer.books);
 
   useEffect(() => {
     dispatch(actionCreators.getBooks());

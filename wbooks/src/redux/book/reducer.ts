@@ -24,13 +24,16 @@ export const bookReducer = (state = initialState, action: Action) => {
     case actions.GET_BOOKS_SUCCESS:
       return {
         ...state,
-        books: action.payload
+        books: action.payload,
+        booksLoading: false,
+        bookError: null
       };
 
     case actions.GET_BOOKS_FAILURE:
       return {
         ...state,
-        bookError: action.payload
+        bookError: action.payload,
+        booksLoading: false
       };
 
     default:

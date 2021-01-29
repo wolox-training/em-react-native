@@ -5,5 +5,10 @@ import Reactotron from '@config/reactotronConfig';
 import { bookReducer } from './book/reducer';
 
 const rootReducer = combineReducers({ bookReducer });
+const middlewares = [applyMiddleware(thunk)];
 
-export default createStore(rootReducer, compose(applyMiddleware(thunk), Reactotron.createEnhancer()));
+if (__DEV__) {
+  middlewares.push(Reactotron.createEnhancer());
+}
+
+export default createStore(rootReducer, compose(...middlewares));

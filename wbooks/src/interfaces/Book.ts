@@ -4,3 +4,9 @@ export interface Book {
   author: string;
   imageUrl: string | null;
 }
+
+export interface BookState {
+  books: Book[];
+  booksLoading: boolean;
+  booksError: string | null;
+}

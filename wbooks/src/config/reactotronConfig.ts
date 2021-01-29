@@ -1,6 +1,7 @@
 import Reactotron, { trackGlobalErrors, overlay } from 'reactotron-react-native';
 import { NativeModules } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { reactotronRedux } from 'reactotron-redux';
 
 interface Tron {
   log: (...args: any[]) => void;
@@ -20,19 +21,8 @@ if (__DEV__) {
   const scriptHostname = scriptURL.split('://')[1].split(':')[0];
   Reactotron.configure({ name: 'wbooks', host: scriptHostname })
     .use(trackGlobalErrors({}))
+    .use(reactotronRedux())
     // .use(apisaucePlugin())
-    // .use(
-    //   reactotronRedux({
-    //     onRestore: state =>
-    //       Object.entries(state).reduce(
-    //         (prev, [key, value]) => ({
-    //           ...prev,
-    //           [key]: key === 'nav' ? value : Immutable(value)
-    //         }),
-    //         {}
-    //       )
-    //   })
-    // )
     .setAsyncStorageHandler(AsyncStorage)
     .use(overlay())
     .connect();

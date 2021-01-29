@@ -1,42 +1,15 @@
-import { Book } from '@interfaces/Book';
+import { completeState, createReducer, completeReducer } from 'redux-recompose';
 
 import { actions } from './actions';
 
 const initialState = {
-  books: [],
-  booksLoading: false,
-  bookError: null
+  books: []
 };
 
-interface Action {
-  type: string;
-  payload: Book[];
-}
+const fullInitialState = completeState(initialState);
 
-export const bookReducer = (state = initialState, action: Action) => {
-  switch (action.type) {
-    case actions.GET_BOOKS:
-      return {
-        ...state,
-        booksLoading: true
-      };
-
-    case actions.GET_BOOKS_SUCCESS:
-      return {
-        ...state,
-        books: action.payload,
-        booksLoading: false,
-        bookError: null
-      };
-
-    case actions.GET_BOOKS_FAILURE:
-      return {
-        ...state,
-        bookError: action.payload,
-        booksLoading: false
-      };
-
-    default:
-      return state;
-  }
+const reducerDescription = {
+  primaryActions: [actions.GET_BOOKS]
 };
+
+export const bookReducer = createReducer(fullInitialState, completeReducer(reducerDescription));

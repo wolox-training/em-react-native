@@ -1,6 +1,7 @@
 export const ROUTES = {
   BookList: 'BookList',
-  BookDetail: 'BookDetail'
+  BookDetail: 'BookDetail',
+  Search: 'Search'
 };
 
 export const TABS = {

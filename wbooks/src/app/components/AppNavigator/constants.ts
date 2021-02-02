@@ -1,6 +1,8 @@
 import Navbar from '@components/Navbar';
 import { COLORS } from '@constants/colors';
 
+import SearchIcon from '../SearchIcon';
+
 export const SCREEN_OPTS = {
   headerTitleStyle: {
     fontSize: 16,
@@ -16,6 +18,7 @@ export const SCREEN_OPTS = {
     height: 100
   },
   headerBackground: Navbar,
+  headerRight: SearchIcon,
   headerBackTitleVisible: false,
   headerTransparent: true,
   headerTintColor: COLORS.lightBlue

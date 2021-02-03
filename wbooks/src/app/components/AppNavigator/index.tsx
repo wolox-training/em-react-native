@@ -18,13 +18,13 @@ const Tab = createBottomTabNavigator();
 function LibraryStackScreen() {
   return (
     <Stack.Navigator screenOptions={SCREEN_OPTS as object}>
+      <Stack.Screen name={ROUTES.BookList} component={BookList} options={{ title: 'Listado de libros' }} />
+      <Stack.Screen name={ROUTES.BookDetail} component={BookDetail} options={{ title: 'Detalle' }} />
       <Stack.Screen
         name={ROUTES.Search}
         component={Search}
-        options={{ headerTitle: SearchBar, headerRight: undefined }}
+        options={{ headerTitle: SearchBar, headerRight: undefined, headerLeft: () => null }}
       />
-      <Stack.Screen name={ROUTES.BookList} component={BookList} options={{ title: 'Listado de libros' }} />
-      <Stack.Screen name={ROUTES.BookDetail} component={BookDetail} options={{ title: 'Detalle' }} />
     </Stack.Navigator>
   );
 }

@@ -13,6 +13,7 @@ import NoItems from './components/NoItems';
 function Search() {
   const dispatch = useDispatch();
   const books = useSelector<AppState, Book[]>(state => state.bookReducer.books);
+  const searchCriteria = useSelector<AppState, string>(state => state.bookReducer.filterBooks) || '';
 
   useEffect(() => {
     dispatch(actionCreators.getBooks());
@@ -21,13 +22,23 @@ function Search() {
   const keyExtractor = ({ id }: Book) => String(id);
   const renderItem: ListRenderItem<Book> = ({ item }) => <BookItem item={item} />;
 
+  const filteredBooks =
+    searchCriteria.length < 1
+      ? []
+      : books.filter(book => {
+          const SEARCH = searchCriteria.toLowerCase();
+          const TITLE = book.title.toLowerCase();
+
+          return TITLE.includes(SEARCH);
+        });
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={books}
+        data={filteredBooks}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
-        ListEmptyComponent={NoItems}
+        ListEmptyComponent={() => <NoItems quantity={filteredBooks.length} search={searchCriteria} />}
       />
     </SafeAreaView>
   );

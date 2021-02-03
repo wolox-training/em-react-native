@@ -4,12 +4,21 @@ import magnifier from '@assets/ic_search_placeholder.png';
 
 import styles from './styles';
 
-function NoItems() {
+interface Props {
+  quantity: number;
+  search: string;
+}
+
+function NoItems({ quantity, search }: Props) {
+  const hasSearch = quantity < 1 && search;
+
   return (
     <View style={styles.container}>
       <Image source={magnifier} />
-      <Text style={styles.title}>Search in Wbooks</Text>
-      <Text style={styles.subtitle}>Find your favorite writer and books!</Text>
+      <Text style={styles.title}>{hasSearch ? 'No book was found' : 'Search in Wbooks'}</Text>
+      <Text style={styles.subtitle}>
+        {hasSearch ? "Check if you're spelling the book right" : 'Find your favorite writers and books!'}
+      </Text>
     </View>
   );
 }

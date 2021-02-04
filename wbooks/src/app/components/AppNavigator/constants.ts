@@ -12,7 +12,7 @@ export const SCREEN_OPTS = {
     marginBottom: 20
   },
   headerLeftContainerStyle: {
-    marginBottom: 50
+    marginBottom: 20
   },
   headerStyle: {
     height: 100

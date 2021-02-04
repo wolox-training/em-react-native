@@ -23,7 +23,7 @@ function LibraryStackScreen() {
       <Stack.Screen
         name={ROUTES.Search}
         component={Search}
-        options={{ headerTitle: SearchBar, headerRight: undefined, headerLeft: () => null }}
+        options={{ headerTitle: SearchBar, headerRight: undefined }}
       />
     </Stack.Navigator>
   );

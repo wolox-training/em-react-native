@@ -7,7 +7,7 @@ export const actionCreators = {
   getBooks: () => ({
     type: actions.GET_BOOKS,
     target: 'books',
-    service: () => getBooks()
+    service: getBooks
   }),
 
   filterBooks: (search: string) => ({

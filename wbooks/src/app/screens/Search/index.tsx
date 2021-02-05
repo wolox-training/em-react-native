@@ -6,14 +6,16 @@ import BookList from '@components/BookList';
 
 function Search() {
   const searchCriteria = useSelector<AppState, string>(state => state.bookReducer.filterBooks) || '';
-  const books = useSelector<AppState, Book[]>(state => searchCriteria.length < 1
-    ? []
-    : state.bookReducer.books.filter(book => {
-        const SEARCH = searchCriteria.toLowerCase();
-        const TITLE = book.title.toLowerCase();
+  const books = useSelector<AppState, Book[]>(state =>
+    searchCriteria.length < 1
+      ? []
+      : state.bookReducer.books.filter(book => {
+          const SEARCH = searchCriteria.toLowerCase();
+          const TITLE = book.title.toLowerCase();
 
-        return TITLE.includes(SEARCH);
-      }));
+          return TITLE.includes(SEARCH);
+        })
+  );
 
   return <BookList Books={books} isSearch searchCriteria={searchCriteria} />;
 }

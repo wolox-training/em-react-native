@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import searchIcon from '@assets/baric_search.png';
 import { useNavigation } from '@react-navigation/native';
+import searchIcon from '@assets/ic_search.png';
 import { ROUTES } from '@constants/routes';
 
 import styles from './styles';

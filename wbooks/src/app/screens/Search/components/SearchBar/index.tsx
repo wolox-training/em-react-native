@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Image, TextInput, View } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { Image, TextInput, View, TouchableOpacity } from 'react-native';
 import searchIcon from '@assets/ic_search_placeholder.png';
 import cancel from '@assets/times-circle-solid.png';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import actionCreators from '@redux/book/actions';
-import { useDispatch } from 'react-redux';
 
 import styles from './styles';
 

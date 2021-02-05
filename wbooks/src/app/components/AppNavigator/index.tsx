@@ -1,7 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import BookList from '@screens/BookList';
+import Library from '@screens/Library';
+import SearchIcon from '@components/SearchIcon';
 import BookDetail from '@screens/BookDetail';
 import WishList from '@screens/WishList';
 import { ROUTES, TABS } from '@constants/routes';
@@ -18,12 +19,12 @@ const Tab = createBottomTabNavigator();
 function LibraryStackScreen() {
   return (
     <Stack.Navigator screenOptions={SCREEN_OPTS as object}>
-      <Stack.Screen name={ROUTES.BookList} component={BookList} options={{ title: 'Listado de libros' }} />
+      <Stack.Screen name={ROUTES.BookList} component={Library} options={{ title: 'Listado de libros',   headerRight: SearchIcon, }} />
       <Stack.Screen name={ROUTES.BookDetail} component={BookDetail} options={{ title: 'Detalle' }} />
       <Stack.Screen
         name={ROUTES.Search}
         component={Search}
-        options={{ headerTitle: SearchBar, headerRight: undefined }}
+        options={{ headerTitle: SearchBar}}
       />
     </Stack.Navigator>
   );

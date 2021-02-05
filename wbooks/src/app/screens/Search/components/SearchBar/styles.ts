@@ -1,6 +1,8 @@
 import { COLORS } from '@constants/colors';
 import { StyleSheet } from 'react-native';
 
+const SIZE = 15;
+
 export default StyleSheet.create({
   container: {
     flex: 1,
@@ -9,14 +11,14 @@ export default StyleSheet.create({
     paddingHorizontal: 15,
     marginBottom: 20,
     width: '100%',
-    maxHeight: 34,
+    height: 34,
     borderRadius: 100,
     backgroundColor: COLORS.white
   },
 
   image: {
-    width: 15,
-    height: 15
+    width: SIZE,
+    height: SIZE
   },
 
   text: {
@@ -25,6 +27,6 @@ export default StyleSheet.create({
     fontSize: 14,
     marginVertical: 0,
     paddingVertical: 0,
-    color: COLORS.black
+    color: COLORS.notSoBlack
   }
 });

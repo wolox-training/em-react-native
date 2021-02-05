@@ -5,13 +5,10 @@ import magnifier from '@assets/ic_search_placeholder.png';
 import styles from './styles';
 
 interface Props {
-  quantity: number;
-  search: string;
+  hasSearch: boolean;
 }
 
-function NoItems({ quantity, search }: Props) {
-  const hasSearch = quantity < 1 && search;
-
+function NoItems({ hasSearch }: Props) {
   return (
     <View style={styles.container}>
       <Image source={magnifier} />

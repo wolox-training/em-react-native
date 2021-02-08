@@ -9,12 +9,12 @@ import NoItems from './components/NoItems';
 import styles from './styles';
 
 interface Props {
-  Books: Book[];
+  books: Book[];
   isSearch?: boolean;
   searchCriteria?: string;
 }
 
-function BookList({ Books, isSearch, searchCriteria }: Props) {
+function BookList({ books, isSearch, searchCriteria }: Props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,11 +27,11 @@ function BookList({ Books, isSearch, searchCriteria }: Props) {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={Books}
+        data={books}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         ListEmptyComponent={
-          isSearch ? () => <NoItems hasSearch={(Books.length < 1 && searchCriteria) as boolean} /> : undefined
+          isSearch ? () => <NoItems hasSearch={(books.length < 1 && searchCriteria) as boolean} /> : undefined
         }
       />
     </SafeAreaView>

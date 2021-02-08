@@ -17,7 +17,7 @@ function Search() {
         })
   );
 
-  return <BookList Books={books} isSearch searchCriteria={searchCriteria} />;
+  return <BookList books={books} isSearch searchCriteria={searchCriteria} />;
 }
 
 export default Search;

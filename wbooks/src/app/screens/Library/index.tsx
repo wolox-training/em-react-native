@@ -7,7 +7,7 @@ import BookList from '@components/BookList';
 function Library() {
   const books = useSelector<AppState, Book[]>(state => state.bookReducer.books);
 
-  return <BookList Books={books} />;
+  return <BookList books={books} />;
 }
 
 export default Library;

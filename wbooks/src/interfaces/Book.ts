@@ -9,4 +9,5 @@ export interface BookState {
   books: Book[];
   booksLoading: boolean;
   booksError: string | null;
+  filterBooks: string;
 }
